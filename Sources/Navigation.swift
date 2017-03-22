@@ -21,8 +21,14 @@ public class NavigationItem {
   public var index:Int?
   public var key:String
   public weak var successor:NavigationItem?
+  public var action:NavigationAction?
   
   public init(dictionary:[AnyHashable:Any]) throws {
+    
+    if let stringAction = dictionary["action"] as? String,
+      let action = NavigationAction(rawValue: stringAction) {
+      self.action = action
+    }
     
     if let stringType = dictionary["type"] as? String,
       let type = NavigationType(rawValue: stringType) {
