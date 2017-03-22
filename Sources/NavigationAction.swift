@@ -12,4 +12,8 @@ public enum NavigationAction:String {
   case tap
   case isHittable
   case exists
+  case swipeUp
+  case swipeDown
+  case swipeLeft
+  case swipeRight
 }
