@@ -9,6 +9,8 @@
 import Foundation
 
 public enum NavigationType:String {
+  case action
+  
   case any
   
   case other
