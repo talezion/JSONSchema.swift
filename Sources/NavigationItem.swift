@@ -20,7 +20,7 @@ public class NavigationItem {
   public let type:NavigationType!
   public var index:Int?
   public var key:String
-  public weak var successor:NavigationItem?
+  public var successor:NavigationItem?
   public var action:NavigationAction?
   
   public init(dictionary:[AnyHashable:Any]) throws {
