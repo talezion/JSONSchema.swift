@@ -172,4 +172,10 @@ public enum NavigationType:String {
   case tab
   
   case touchBar
+  
+  case tabBars
+  
+  case cells
+  
+  case tabs
 }
