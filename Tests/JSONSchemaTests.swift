@@ -16,7 +16,7 @@ class JSONSchemaTests: XCTestCase {
   override func setUp() {
     super.setUp()
 
-    schema = Schema([
+    schema = try! Schema([
       "title": "Product",
       "description": "A product from Acme's catalog",
       "type": "object",
@@ -44,7 +44,7 @@ class JSONSchemaTests: XCTestCase {
   }
 
   func testReadme() {
-    let schema = Schema([
+    let schema = try! Schema([
       "type": "object",
       "properties": [
         "name": ["type": "string"],
