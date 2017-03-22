@@ -19,17 +19,29 @@ public enum NavigationType:String {
   
   case window
   
+  case windows
+  
   case sheet
+  
+  case sheets
   
   case drawer
   
   case alert
   
+  case alerts
+  
   case dialog
+  
+  case dialogs
   
   case button
   
+  case buttons
+  
   case radioButton
+  
+  case radioButtons
   
   case radioGroup
   
@@ -39,11 +51,17 @@ public enum NavigationType:String {
   
   case popUpButton
   
+  case popUpButtons
+  
   case comboBox
   
   case menuButton
   
+  case menuButtons
+  
   case toolbarButton
+  
+  case toolbarButtons
   
   case popover
   
@@ -55,17 +73,29 @@ public enum NavigationType:String {
   
   case tabBar
   
+  case tabBars
+  
   case tabGroup
   
+  case tabGroups
+  
   case toolbar
+  
+  case toolBars
   
   case statusBar
   
   case table
   
+  case tables
+  
   case tableRow
   
+  case tableRows
+  
   case tableColumn
+  
+  case tableColumns
   
   case outline
   
@@ -74,6 +104,8 @@ public enum NavigationType:String {
   case browser
   
   case collectionView
+  
+  case collectionViews
   
   case slider
   
@@ -97,27 +129,45 @@ public enum NavigationType:String {
   
   case image
   
+  case images
+  
   case icon
+  
+  case icons
   
   case searchField
   
+  case searchFields
+  
   case scrollView
   
+  case scrollViews
+  
   case scrollBar
+  
+  case scrollBars
   
   case staticText
   
   case textField
   
+  case textFields
+  
   case secureTextField
+  
+  case secureTextFields
   
   case datePicker
   
   case textView
   
+  case textViews
+  
   case menu
   
   case menuItem
+  
+  case menuItems
   
   case menuBar
   
@@ -161,9 +211,13 @@ public enum NavigationType:String {
   
   case cell
   
+  case cells
+  
   case layoutArea
   
   case layoutItem
+  
+  case layoutItems
   
   case handle
   
@@ -171,11 +225,9 @@ public enum NavigationType:String {
   
   case tab
   
+  case tabs
+  
   case touchBar
   
-  case tabBars
-  
-  case cells
-  
-  case tabs
+  case touchBars
 }
