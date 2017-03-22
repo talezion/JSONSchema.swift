@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum NavigationError: Error {
+public enum NavigationError: Error {
   case error(String)
 }
 
