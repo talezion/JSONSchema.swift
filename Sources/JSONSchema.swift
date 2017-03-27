@@ -57,7 +57,7 @@ public struct Schema {
       }
       
       self.navigationItems.sort(by: { (itemOne, itemTwo) -> Bool in
-        return itemOne.order > itemTwo.order
+        return itemOne.order < itemTwo.order
       })
     }
     
