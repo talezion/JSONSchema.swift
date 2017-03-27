@@ -22,6 +22,7 @@ public class NavigationItem {
   public var key:String
   public var successor:NavigationItem?
   public var action:NavigationAction?
+  public var order:Int
   
   public init(dictionary:[AnyHashable:Any]) throws {
     
@@ -39,6 +40,7 @@ public class NavigationItem {
     
     self.index = dictionary["index"] as? Int
     self.key = dictionary["key"] as? String ?? ""
+    self.order = dictionary["order"] as? Int ?? 0
     
     if let successorDictionary = dictionary["successor"] as? [AnyHashable:Any] {
       do {

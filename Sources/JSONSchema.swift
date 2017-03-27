@@ -34,7 +34,7 @@ public struct Schema {
   public let description:String?
   
   public let type:[Type]?
-  public let navigation:NavigationItem?
+  public var navigationItems:[NavigationItem] = []
   
   /// validation formats, currently private. If anyone wants to add custom please make a PR to make this public ;)
   let formats:[String:Validator]
@@ -45,14 +45,20 @@ public struct Schema {
     title = schema["title"] as? String
     description = schema["description"] as? String
     
-    if let navigationDictionary = schema["navigation"] as? [AnyHashable:Any] {
-      do {
-        self.navigation = try NavigationItem(dictionary: navigationDictionary)
-      } catch NavigationError.error(let m) {
-        throw NavigationError.error(m)
+    if let navigationArray = schema["navigation"] as? [Any] {
+      for item in navigationArray {
+        guard let navigationDictionary = item as? [AnyHashable:Any] else { continue }
+        do {
+         let navigationItem = try NavigationItem(dictionary: navigationDictionary)
+          self.navigationItems.append(navigationItem)
+        } catch NavigationError.error(let m) {
+          throw NavigationError.error(m)
+        }
       }
-    } else {
-      navigation = nil
+      
+      self.navigationItems.sort(by: { (itemOne, itemTwo) -> Bool in
+        return itemOne.order > itemTwo.order
+      })
     }
     
     if let type = schema["type"] as? String {
