@@ -101,6 +101,10 @@ func validateType(_ type: String) -> (_ value: Any) -> ValidationResult {
           return .Valid
         }
       }
+    case "image":
+      if value is Data {
+        return .Valid
+      }
     case "null":
       if value is NSNull {
         return .Valid
